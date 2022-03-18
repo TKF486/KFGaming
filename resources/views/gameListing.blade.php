@@ -1,2 +1,7 @@
 <h1>Game Listing</h1>
-<h2>Greenman Gaming</h2>
+
+<select name="games" id="games">
+    <option value="FPS">FPS</optional>
+    <option value="RPG">RPG</optional>  
+    <option value="Adventure">Adventure</optional>
+</select>
