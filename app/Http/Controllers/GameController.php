@@ -25,7 +25,7 @@ class GameController extends Controller
 
     public function testOneGame($id)
     {
-       $data = Game::where('gameID', $id)->get();
+       $data = Game::where('id', $id)->get();
        return view('gameDetails',['games'=>$data]);
        
     }

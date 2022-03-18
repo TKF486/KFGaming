@@ -17,12 +17,12 @@ class CreateGamesTable extends Migration
             (Blueprint $table) {
                 $table->id();
                 $table->string('gameName',30);
-                $table->decimal('gamePrice', 10, 2);
+                $table->decimal('gamePrice', 10, 2)->nullable();
                 $table->longtext('gameDesc');
                 $table->string('gamePublisher',30);
-                $table->integer('gameAgeRating');
+                $table->integer('gameAgeRating')->nullable();
                 $table->string('gameGenre',30);
-                $table->date('gameReleaseDate');
+                $table->date('gameReleaseDate')->nullable();
                 $table->string('gameLanguage',30);
                 $table->string('gameRequirement',100);
                 $table->timestamps();
