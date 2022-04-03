@@ -20,5 +20,14 @@ Route::get('/', function () {
 
 Route::get('/list/{id}', [GameController::class,'testOneGame']);
 Route::view('gamelisting','gameListing');
+Route::view('app','app');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
