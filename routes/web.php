@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,11 +37,11 @@ Route::get('/', function () {
 // Route::get('/createGames', function () {
 //     return view('createGames');
 // });
-// Route::post('createGames', [GameController::class,'store']);
+// // Route::post('createGames', [GameController::class,'store']);
 // // Route::get('gameDetails', [GameController::class,'list']);
-Route::get('/gameDetails', function () {
-    return view('gameDetails');
-});
+// Route::get('/gameDetails', function () {
+//     return view('gameDetails');
+// });
 
 Route::get('/gameDetails/index', [GameController::class, 'index']);
 Route::get('/gameDetails/{id}', [GameController::class, 'show']);
@@ -53,5 +54,8 @@ Route::delete('/gameDetail/{id}', [GameController::class, 'destroy']);
 //     ->name('gameImage');
 //  });
 
+//************     Koo Xin Tong   ***********************
+Route::get('/register/admin', [RegisterController::class,'showAdminRegisterForm']);
+Route::get('/register/admin', [RegisterController::class, 'createAdmin']);
 
 
