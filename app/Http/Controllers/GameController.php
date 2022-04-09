@@ -50,6 +50,11 @@ class GameController extends Controller
         return Game::all();
     }
 
+    public function show(Request $req, $id){
+        $game = Game::findOrFail($id);
+        return $game;
+    }
+
     public function store(Request $req){
         return Game::create($req->all());
     }
@@ -65,5 +70,6 @@ class GameController extends Controller
         $game->delete();
         return 204;
     }
+
 }
       

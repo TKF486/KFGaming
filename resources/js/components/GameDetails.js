@@ -1,20 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Button, Carousel, Container, Row, Col, Card } from "react-bootstrap";
-import CardGroup from 'react-bootstrap/CardGroup';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Image from "react-bootstrap/Image";
-
+import {
+    Button,
+    Carousel,
+    Container,
+    Row,
+    Col,
+    Card,
+    ListGroup,
+} from "react-bootstrap";
 
 function GameDetails() {
-    // const btn = { backgroundColor: "#FF0000" };
-    // const container_colors = { backgroundColor: "#FF0000" };
     const background_colors = {
         backgroundColor: "#0c192e",
     };
     const col_colors = {};
     return (
-       
         <div className="main_container">
             <Container fluid="xxl">
                 <Row>
