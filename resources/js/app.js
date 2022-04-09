@@ -13,9 +13,7 @@ require("./bootstrap");
  */
 
 require("./components/GameDetails");
-require("./components/Example");
 require("./components/GameListing");
-require("./components/Example");
 require("./components/Testing");
 
 import "bootstrap/dist/css/bootstrap.min.css";
