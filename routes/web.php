@@ -18,18 +18,31 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/list/{id}', [GameController::class,'testOneGame']);
-Route::view('gamelisting','gameListing');
-Route::view('app','app');
+// Route::get('/list/{id}', [GameController::class,'testOneGame']);
+// Route::view('gamelisting','gameListing');
+// Route::view('app','app');
 
 
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::view('testing','testing');
+Route::get('/createGames', function () {
+    return view('createGames');
+});
+Route::post('createGames', [GameController::class,'store']);
+Route::get('gameDetails', [GameController::class,'list']);
+
+// Route::prefix('image')->group(function () {
+//     Route::get('game/{filename}','ImageController@showGameImage')
+//     ->name('gameImage');
+//  });
+
+
+

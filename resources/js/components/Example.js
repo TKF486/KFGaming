@@ -3,260 +3,82 @@ import ReactDOM from "react-dom";
 import { Button, Carousel, Container, Row, Col, Card } from "react-bootstrap";
 import CardGroup from 'react-bootstrap/CardGroup';
 import "bootstrap/dist/css/bootstrap.min.css";
+import Image from "react-bootstrap/Image";
+import {
+    Button,
+    Carousel,
+    Container,
+    Row,
+    Col,
+    Card,
+    ListGroup,
+} from "react-bootstrap";
 
 function Example() {
+    // const btn = { backgroundColor: "#FF0000" };
+    // const container_colors = { backgroundColor: "#FF0000" };
+    const background_colors = {
+        backgroundColor: "#0c192e",
+    };
+    const col_colors = {};
     return (
-        <div className="container">
-            {
-                <div>
-                {/* <img src="/img/cyberpunk.jpg" alt="apex"/>
-                <img src="/img/dota2.jpg" alt="apex"/>
-                <img src="/img/dragonball.jpg" alt="apex"/>
-                <img src="/img/dying-light-2_je11.300.jpg" alt="apex"/>
-                <img src="/img/dying-light-cover.jpg" alt="apex"/>
-                <img src="/img/ff6.png" alt="apex"/>
-                <img src="/img/final-fantasy-15.jpg" alt="apex"/>
-                <img src="/img/forza-horizon-4-cover.jpg" alt="apex"/>
-                <img src="/img/forza-horizon-5-button-fin-1629830068379.jpg" alt="apex"/>
-                <img src="/img/hitman.jpg" alt="apex"/>
-                <img src="/img/little-nightmares-cover.jpg" alt="apex"/>
-                <img src="/img/little-nightmares-ii-cover.jpg" alt="apex"/>
-                <img src="/img/MHR.jpg" alt="apex"/>
-                <img src="/img/MHW.jpg" alt="apex"/>
-                <img src="/img/minecraft.jpg" alt="apex"/>
-                <img src="/img/naruto.jpg" alt="apex"/>
-                <img src="/img/rainbow6.jpg" alt="apex"/>
-                <img src="/img/valorant.png" alt="apex"/> */}
-                
-            
-            <CardGroup>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/csgo.jpg" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/cyberpunk.jpg" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                </CardGroup>
-
-
-                {/* <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                </CardGroup> */}
-            </div>
-            }
-            
+       
+        <div className="main_container">
+            <Container fluid="xxl">
+                <Row>
+                    <Col style={col_colors} sm={8}>
+                        <Carousel>
+                            <Carousel.Item>
+                                <Image
+                                    className="d-block  w-100"
+                                    src="https://cdn.cloudflare.steamstatic.com/steam/apps/1475810/ss_72c5a29ebef19e5f7c046448e23c7a2a10d9d8f5.1920x1080.jpg?t=1648479992"
+                                    alt="First slide"
+                                    fluid
+                                />
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <Image
+                                    className="d-block  w-100"
+                                    src="https://cdn.cloudflare.steamstatic.com/steam/apps/1475810/ss_b59b7c16cb92dece04459303befb1f256fe928ea.1920x1080.jpg?t=1648479992"
+                                    alt="First slide"
+                                    fluid
+                                />
+                            </Carousel.Item>
+                        </Carousel>
+                    </Col>
+                    <Col style={col_colors} sm={4}>
+                        <Card style={{ width: "18rem" }}>
+                            <Card.Img
+                                variant="top"
+                                src="https://cdn.cloudflare.steamstatic.com/steam/apps/1475810/header.jpg?t=1648479992"
+                            />
+                            <Card.Body>
+                                <Card.Title>GhostWire</Card.Title>
+                                <Card.Text>
+                                    Tokyo's population has vanished, and deadly
+                                    supernatural forces prowl the streets. Use
+                                    an arsenal of elemental abilities to unravel
+                                    the truth behind the disappearance and save
+                                    Tokyo.
+                                    {/* <label>PUBLISHER: Bethesda Softworks</label>
+                                    <ListGroup horizontal>
+                                        <ListGroup.Item>
+                                            Singleplayer
+                                        </ListGroup.Item>
+                                        <ListGroup.Item>
+                                            supernatural
+                                        </ListGroup.Item>
+                                        <ListGroup.Item>
+                                            First-Person
+                                        </ListGroup.Item>
+                                        <ListGroup.Item>Action</ListGroup.Item>
+                                    </ListGroup> */}
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     );
 }
