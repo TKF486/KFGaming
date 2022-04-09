@@ -27,17 +27,14 @@ Route::get('/', function () {
 
 // Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//crate Games blade
+Route::get('/createGames', function () {
+    return view('createGames');
+});
+Route::post('createGames', [GameController::class,'create']);
 
-// Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::view('testing','testing');
-// Route::get('/createGames', function () {
-//     return view('createGames');
-// });
-Route::post('createGames', [GameController::class,'store']);
 // // Route::get('gameDetails', [GameController::class,'list']);
 Route::get('/gameDetails', function () {
     return view('gameDetails');
