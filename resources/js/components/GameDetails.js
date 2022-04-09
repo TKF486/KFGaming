@@ -18,18 +18,20 @@ export default class GameDetails extends Component {
     constructor() {
         super();
         this.state = {
-            games: [],
+            games: "",
             // updatePostData: { id: "", title: "", content: "", user_id: "" },
             // updatePostModal: false,
         };
     }
 
     loadGame() {
-        axios.get("http://127.0.0.1:8000/api/gameDetails").then((response) => {
-            this.setState({
-                games: response.data,
+        axios
+            .get("http://127.0.0.1:8000/api/gameDetails/" + id)
+            .then((response) => {
+                this.setState({
+                    games: response.data,
+                });
             });
-        });
     }
 
     componentWillMount() {
@@ -37,29 +39,44 @@ export default class GameDetails extends Component {
     }
 
     render() {
-        let games = this.state.games.map((game) => {
-            return (
-                <tr key={game.id}>
-                    <td>{game.id}</td>
-                    <td>{game.gameName}</td>
-                </tr>
-            );
-        });
-
+        let games = this.state.games;
         return (
-            <div className="container">
-                <Table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>GameName</th>
-                        </tr>
-                    </thead>
-                    <tbody>{games}</tbody>
-                </Table>
-            </div>
+            <Table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>GameName</th>
+                        <th>GamePrice</th>
+                        <th>GameDesc</th>
+                        <th>GameRequirement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr key={games.id}>
+                        <td>{games.id}</td>
+                        <td>{games.gameName}</td>
+                        <td>{games.gamePrice}</td>
+                        <td>{games.gameDesc}</td>
+                        <td>{games.gameRequirement}</td>
+                    </tr>
+                </tbody>
+            </Table>
         );
     }
+
+    // return (
+    //     <div className="container">
+    //         <Table>
+    //             <thead>
+    //                 <tr>
+    //                     <th>ID</th>
+    //                     <th>GameName</th>
+    //                 </tr>
+    //             </thead>
+    //             <tbody>{games}</tbody>
+    //         </Table>
+    //     </div>
+    // );
 }
 
 if (document.getElementById("gameDetails")) {
