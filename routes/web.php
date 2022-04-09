@@ -36,7 +36,7 @@ Route::get('/', function () {
 // Route::get('/createGames', function () {
 //     return view('createGames');
 // });
-// // Route::post('createGames', [GameController::class,'store']);
+// Route::post('createGames', [GameController::class,'store']);
 // // Route::get('gameDetails', [GameController::class,'list']);
 Route::get('/gameDetails', function () {
     return view('gameDetails');
