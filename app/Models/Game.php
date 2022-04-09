@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Game extends Model
 {
     use HasFactory;
+    protected $fillable = ["gameName", "gamePrice", "gameDesc", "gamePublisher","gameAgeRating","gameGenre","gameReleaseDate","gameLanguage","gameRequirement","file_path"];
 }
+

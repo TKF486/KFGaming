@@ -25,6 +25,7 @@ class CreateGamesTable extends Migration
                 $table->date('gameReleaseDate')->nullable();
                 $table->string('gameLanguage',30);
                 $table->string('gameRequirement',100);
+                $table->string('file_path');
                 $table->timestamps();
             });
     }
