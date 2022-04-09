@@ -26,7 +26,7 @@ export default class GameDetails extends Component {
 
     loadGame() {
         axios
-            .get("http://127.0.0.1:8000/api/gameDetails/" + id)
+            .get("http://127.0.0.1:8000/api/gameDetails/1")
             .then((response) => {
                 this.setState({
                     games: response.data,
@@ -63,20 +63,6 @@ export default class GameDetails extends Component {
             </Table>
         );
     }
-
-    // return (
-    //     <div className="container">
-    //         <Table>
-    //             <thead>
-    //                 <tr>
-    //                     <th>ID</th>
-    //                     <th>GameName</th>
-    //                 </tr>
-    //             </thead>
-    //             <tbody>{games}</tbody>
-    //         </Table>
-    //     </div>
-    // );
 }
 
 if (document.getElementById("gameDetails")) {

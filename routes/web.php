@@ -37,14 +37,14 @@ Route::get('/', function () {
 // Route::get('/createGames', function () {
 //     return view('createGames');
 // });
-// // Route::post('createGames', [GameController::class,'store']);
+Route::post('createGames', [GameController::class,'store']);
 // // Route::get('gameDetails', [GameController::class,'list']);
-// Route::get('/gameDetails', function () {
-//     return view('gameDetails');
-// });
+Route::get('/gameDetails', function () {
+    return view('gameDetails');
+});
 
 Route::get('/gameDetails/index', [GameController::class, 'index']);
-Route::get('/gameDetails/{id}', [GameController::class, 'show']);
+// Route::get('/gameDetails/{id}', [GameController::class, 'show']);
 Route::post('/gameDetails/store', [GameController::class, 'store']);
 // Route::put('/edit/{id}', [GameController::class, 'update']);
 Route::delete('/gameDetail/{id}', [GameController::class, 'destroy']);
