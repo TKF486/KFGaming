@@ -32,12 +32,21 @@ Route::get('/', function () {
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::view('testing','testing');
-Route::get('/createGames', function () {
-    return view('createGames');
-});
-Route::post('createGames', [GameController::class,'store']);
-Route::get('gameDetails', [GameController::class,'list']);
+// Route::view('testing','testing');
+// Route::get('/createGames', function () {
+//     return view('createGames');
+// });
+// // Route::post('createGames', [GameController::class,'store']);
+// // Route::get('gameDetails', [GameController::class,'list']);
+// Route::get('/gameDetails', function () {
+//     return view('gameDetails');
+// });
+
+Route::get('/gameDetails/index', [GameController::class, 'index']);
+Route::get('/gameDetails/{id}', [GameController::class, 'show']);
+Route::post('/gameDetails/store', [GameController::class, 'store']);
+// Route::put('/edit/{id}', [GameController::class, 'update']);
+Route::delete('/gameDetail/{id}', [GameController::class, 'destroy']);
 
 // Route::prefix('image')->group(function () {
 //     Route::get('game/{filename}','ImageController@showGameImage')

@@ -19,7 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('posts', [GameController::class, 'index']);
-Route::post('post', [GameController::class, 'store']);
-Route::put('post/{id}', [GameController::class, 'update']);
-Route::delete('post/{id}', [GameController::class, 'destroy']);
+Route::get('gameDetails', [GameController::class, 'index']);
+Route::get('gameDetails/{id}', [GameController::class, 'show']);
+Route::post('game', [GameController::class, 'store']);
+Route::put('game/{id}', [GameController::class, 'update']);
+Route::delete('gameDetail/{id}', [GameController::class, 'destroy']);
