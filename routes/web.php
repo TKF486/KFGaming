@@ -24,31 +24,28 @@ Route::get('/',  function () {
 });
 
 // Route::get('/list/{id}', [GameController::class,'testOneGame']);
-// Route::view('gamelisting','gameListing');
+Route::view('gamelisting','gameListing');
 // Route::view('app','app');
 
 
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//crate Games blade
+Route::get('/createGames', function () {
+    return view('createGames');
+});
+Route::post('createGames', [GameController::class,'create']);
 
-// Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::view('testing','testing');
-// Route::get('/createGames', function () {
-//     return view('createGames');
-// });
-// // Route::post('createGames', [GameController::class,'store']);
 // // Route::get('gameDetails', [GameController::class,'list']);
-// Route::get('/gameDetails', function () {
-//     return view('gameDetails');
-// });
+Route::get('/gameDetails', function () {
+    return view('gameDetails');
+});
 
 Route::get('/gameDetails/index', [GameController::class, 'index']);
-Route::get('/gameDetails/{id}', [GameController::class, 'show']);
+// Route::get('/gameDetails/{id}', [GameController::class, 'show']);
 Route::post('/gameDetails/store', [GameController::class, 'store']);
 // Route::put('/edit/{id}', [GameController::class, 'update']);
 Route::delete('/gameDetail/{id}', [GameController::class, 'destroy']);
