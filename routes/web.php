@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 // Route::get('/list/{id}', [GameController::class,'testOneGame']);
-// Route::view('gamelisting','gameListing');
+Route::view('gamelisting','gameListing');
 // Route::view('app','app');
 
 
