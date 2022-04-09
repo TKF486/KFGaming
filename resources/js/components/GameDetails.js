@@ -12,7 +12,7 @@ import {
     ListGroup,
 } from "react-bootstrap";
 
-function Example() {
+function GameDetails() {
     // const btn = { backgroundColor: "#FF0000" };
     // const container_colors = { backgroundColor: "#FF0000" };
     const background_colors = {
@@ -57,19 +57,6 @@ function Example() {
                                     an arsenal of elemental abilities to unravel
                                     the truth behind the disappearance and save
                                     Tokyo.
-                                    {/* <label>PUBLISHER: Bethesda Softworks</label>
-                                    <ListGroup horizontal>
-                                        <ListGroup.Item>
-                                            Singleplayer
-                                        </ListGroup.Item>
-                                        <ListGroup.Item>
-                                            supernatural
-                                        </ListGroup.Item>
-                                        <ListGroup.Item>
-                                            First-Person
-                                        </ListGroup.Item>
-                                        <ListGroup.Item>Action</ListGroup.Item>
-                                    </ListGroup> */}
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -80,8 +67,8 @@ function Example() {
     );
 }
 
-export default Example;
+export default GameDetails;
 
-if (document.getElementById("example")) {
-    ReactDOM.render(<Example />, document.getElementById("example"));
+if (document.getElementById("gameDetails")) {
+    ReactDOM.render(<GameDetails />, document.getElementById("gameDetails"));
 }

@@ -1,39 +1,28 @@
-<h2>Game Listing</h2>
-<table border="1">
-    <tr>
-        <td>id</td>
-        <td>gameName</td>
-        <td>gamePrice</td>
-        <td>gameDesc</td>
-        <td>gamePublisher</td>
-        <td>gameAgeRating</td>
-        <td>gameGenre</td>
-        <td>gameReleaseDate</td>
-        <td>gameLanguage</td>
-        <td>gameRequirement</td>
-        <td>Image</td>
-    </tr>
-    @foreach($games as $game)
-    <tr>
-        <td>{{$game['id']}}</td>
-        <td>{{$game['gameName']}}</td>
-        <td>{{$game['gamePrice']}}</td>
-        <td>{{$game['gameDesc']}}</td>
-        <td>{{$game['gamePublisher']}}</td>
-        <td>{{$game['gameAgeRating']}}</td>
-        <td>{{$game['gameGenre']}}</td>
-        <td>{{$game['gameReleaseDate']}}</td>
-        <td>{{$game['gameLanguage']}}</td>
-        <td>{{$game['gameRequirement']}}</td>
-        <td>
-        <img src="{{ asset('storage/game/'.$game->file_path) }}" alt="game_image" title="game_image">
-        </td>
-    </tr>
-    @endforeach
-</table>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url('css/customised.css') }}">
+        <title>React Posts</title>
 
-<style>
-    .w-5{
-        display:none
-    }
-</style>
+        <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+  
+/>
+
+        <style>
+            body {
+                font-family: 'Nunito', sans-serif;
+            }
+        </style>
+    </head>
+    <body class="antialiased">
+       
+        <div id="gameDetails"></div>
+    </body>
+    <script src="/js/app.js"></script>
+</html>
