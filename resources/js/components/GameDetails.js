@@ -47,7 +47,7 @@ export default class GameDetails extends Component {
                                 <Carousel.Item>
                                     <Image
                                         className="d-block  w-100"
-                                        src={"/storage/game/" + games.file_path}
+                                        src={games.image1}
                                         alt="First slide"
                                         fluid
                                     />
@@ -55,7 +55,7 @@ export default class GameDetails extends Component {
                                 <Carousel.Item>
                                     <Image
                                         className="d-block  w-100"
-                                        src="https://cdn.cloudflare.steamstatic.com/steam/apps/1475810/ss_b59b7c16cb92dece04459303befb1f256fe928ea.1920x1080.jpg?t=1648479992"
+                                        src={games.image2}
                                         alt="First slide"
                                         fluid
                                     />
@@ -63,10 +63,10 @@ export default class GameDetails extends Component {
                             </Carousel>
                         </Col>
                         <Col sm={4}>
-                            <Card style={{ width: "18rem" }}>
+                            <Card>
                                 <Card.Img
                                     variant="top"
-                                    src="https://cdn.cloudflare.steamstatic.com/steam/apps/1475810/header.jpg?t=1648479992"
+                                    src={"/storage/game/" + games.mainImage}
                                 />
                                 <Card.Body>
                                     <Card.Title>GhostWire</Card.Title>
@@ -97,13 +97,25 @@ export default class GameDetails extends Component {
                             <h3>GAME DESCRIPTION</h3>
                             <hr></hr>
                             <p>{games.gameDesc}</p>
+                            <br></br>
+                            <Image
+                                className="d-block  w-100"
+                                src={games.image1}
+                                alt="First slide"
+                                fluid
+                            />
                         </Col>
                         <Col sm={4}>
                             <h3>GAME INFORMATION</h3>
+                            <hr></hr>
                             <div>
                                 <span>Publisher: </span>
                                 <span>{games.gamePublisher}</span>
                             </div>
+                            <br></br>
+                            <h3>GAME REQUIREMENTS</h3>
+                            <hr></hr>
+                            <pre>{games.gameRequirement}</pre>
                         </Col>
                     </Row>
                 </Container>

@@ -40,7 +40,9 @@ class GameController extends Controller
         $game->gameReleaseDate = $req->gameReleaseDate;
         $game->gameLanguage = $req->gameLanguage;
         $game->gameRequirement = $req->gameRequirement;
-        $game->file_path = $req->file->hashName();
+        $game->mainImage = $req->file->hashName();
+        $game->image1 = $req->image1;
+        $game->image2 = $req->image2;
         $game->save();
         return redirect('createGames');
       
