@@ -5829,6 +5829,7 @@ var defaults = {
     clarifyTimeoutError: false
   },
 
+<<<<<<< Updated upstream
   adapter: getDefaultAdapter(),
 
   transformRequest: [function transformRequest(data, headers) {
@@ -5843,6 +5844,13 @@ var defaults = {
       utils.isBlob(data)
     ) {
       return data;
+=======
+      axios__WEBPACK_IMPORTED_MODULE_3___default().get("http://127.0.0.1:8000/api/gameDetails/" + id).then(function (response) {
+        _this2.setState({
+          games: response.data
+        });
+      });
+>>>>>>> Stashed changes
     }
     if (utils.isArrayBufferView(data)) {
       return data.buffer;

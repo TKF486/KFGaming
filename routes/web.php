@@ -1,8 +1,12 @@
 <?php
 
+use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +19,7 @@ use App\Http\Controllers\Auth\RegisterController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/',  function () {
     return view('welcome');
 });
 
@@ -25,7 +29,7 @@ Route::view('gamelisting','gameListing');
 
 
 
-// Auth::routes();
+Auth::routes();
 
 //crate Games blade
 Route::get('/createGames', function () {
@@ -53,6 +57,8 @@ Route::delete('/gameDetail/{id}', [GameController::class, 'destroy']);
 
 //************     Koo Xin Tong   ***********************
 Route::get('/register/admin', [RegisterController::class,'showAdminRegisterForm']);
-Route::get('/register/admin', [RegisterController::class, 'createAdmin']);
+Route::post('/register/admin', [RegisterController::class, 'createAdmin']);
+Route::get('logout', [LoginController::class,'logout']);
+//Route::get('datatest', [LoginController::class,'test']);
 
 
