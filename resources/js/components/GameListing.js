@@ -71,16 +71,18 @@ export default class GameListing extends Component {
 
         return (
             <div className="container">
-                <Table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>{games}</tbody>
-                </Table>
+                
+                        <Card style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src="/img/apex.png" />
+                            <Card.Body>
+                                <Card.Title>Apex</Card.Title>
+                                <Card.Text>
+                                Some quick example text to build on the card title and make up the bulk of
+                                the card's content.
+                                </Card.Text>
+                                <Button variant="primary">Go somewhere</Button>
+                            </Card.Body>
+                        </Card>
             </div>
         );
     }
