@@ -81,6 +81,13 @@ export default class GameDetails extends Component {
                                             supernatural
                                         </ListGroup.Item>
                                     </ListGroup>
+                                    <br></br>
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary btn-lg btn-block"
+                                    >
+                                        Checkout
+                                    </button>
                                 </Card.Body>
                             </Card>
                         </Col>

@@ -7043,6 +7043,10 @@ var GameDetails = /*#__PURE__*/function (_Component) {
                       children: "supernatural"
                     })]
                   })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+                  type: "button",
+                  "class": "btn btn-primary btn-lg btn-block",
+                  children: "Checkout"
                 })]
               })
             })]
