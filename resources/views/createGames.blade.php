@@ -57,7 +57,16 @@
     <input type="text" name="gameRequirement" placeholder="gameRequirement">
     <br><br>
 
+    <label for="mainImage">main Image</label>
     <input type="file" name="file" required>
+    <br><br>
+
+    <label for="image1">image1</label>
+    <input type="text" name="image1" placeholder="url for image1">
+    <br><br>
+
+    <label for="image2">image2</label>
+    <input type="text" name="image2" placeholder="url for image2">
     <br><br>
 
     <button type="submit">Submit</button>

@@ -47,7 +47,7 @@ export default class GameDetails extends Component {
                                 <Carousel.Item>
                                     <Image
                                         className="d-block  w-100"
-                                        src={"/storage/game/" + games.file_path}
+                                        src={games.image1}
                                         alt="First slide"
                                         fluid
                                     />
@@ -55,7 +55,7 @@ export default class GameDetails extends Component {
                                 <Carousel.Item>
                                     <Image
                                         className="d-block  w-100"
-                                        src="https://cdn.cloudflare.steamstatic.com/steam/apps/1475810/ss_b59b7c16cb92dece04459303befb1f256fe928ea.1920x1080.jpg?t=1648479992"
+                                        src={games.image2}
                                         alt="First slide"
                                         fluid
                                     />
@@ -63,22 +63,41 @@ export default class GameDetails extends Component {
                             </Carousel>
                         </Col>
                         <Col sm={4}>
-                            <Card style={{ width: "18rem" }}>
+                            <Card className="card_parent">
                                 <Card.Img
                                     variant="top"
-                                    src="https://cdn.cloudflare.steamstatic.com/steam/apps/1475810/header.jpg?t=1648479992"
+                                    src={"/storage/game/" + games.mainImage}
                                 />
                                 <Card.Body>
-                                    <Card.Title>GhostWire</Card.Title>
-                                    <label>
-                                        PUBLISHER: {games.gamePublisher}
-                                    </label>
-                                    <ListGroup vertical>
-                                        <ListGroup.Item>
-                                            Singleplayer
+                                    <Card.Title>{games.gameName}</Card.Title>
+                                    <hr></hr>
+                                    <ListGroup
+                                        vertical
+                                        className="game_tag_container"
+                                    >
+                                        <ListGroup.Item className="game_tag">
+                                            <span>Game Genre: </span>
+                                            <span>{games.gameGenre}</span>
                                         </ListGroup.Item>
-                                        <ListGroup.Item>
-                                            supernatural
+
+                                        <ListGroup.Item className="game_tag">
+                                            <span>Game Publisher: </span>
+                                            <span>{games.gamePublisher}</span>
+                                        </ListGroup.Item>
+
+                                        <ListGroup.Item className="game_tag">
+                                            <span>Game Age Rating: </span>
+                                            <span>{games.gameAgeRating}</span>
+                                        </ListGroup.Item>
+
+                                        <ListGroup.Item className="game_tag">
+                                            <span>Game ReleaseDate: </span>
+                                            <span>{games.gameReleaseDate}</span>
+                                        </ListGroup.Item>
+
+                                        <ListGroup.Item className="game_tag">
+                                            <span>Game Language: </span>
+                                            <span>{games.gameLanguage}</span>
                                         </ListGroup.Item>
                                     </ListGroup>
                                 </Card.Body>
@@ -87,17 +106,54 @@ export default class GameDetails extends Component {
                     </Row>
                     <Row>
                         <Col sm={8}>
+                            <div>
+                                <Container className="checkout_container">
+                                    <Row>
+                                        <Col sm={11}>
+                                            <h2>Buy {games.gameName}</h2>
+                                        </Col>
+                                        <Col sm={1}></Col>
+                                    </Row>
+                                    <Row>
+                                        <Col sm={9}>
+                                            <h5>RM179.99</h5>
+                                        </Col>
+                                        <Col sm={3}>
+                                            <button class="col btn btn-green-moon">
+                                                <span>Checkout</span>
+                                            </button>
+                                        </Col>
+                                    </Row>
+                                </Container>
+                            </div>
+                            <br></br>
+
                             <h3>GAME DESCRIPTION</h3>
                             <hr></hr>
                             <p>{games.gameDesc}</p>
+                            <br></br>
+
+                            <h3>GAME SCREENSHOTS</h3>
+                            <hr></hr>
+                            <Image
+                                className="d-block  w-100"
+                                src={games.image1}
+                                alt="First slide"
+                                fluid
+                            />
+                            <Image
+                                className="d-block  w-100"
+                                src={games.image2}
+                                alt="First slide"
+                                fluid
+                            />
+
+                            <h3>GAME REQUIREMENTS</h3>
+                            <hr></hr>
+                            <pre>{games.gameRequirement}</pre>
+                            <br></br>
                         </Col>
-                        <Col sm={4}>
-                            <h3>GAME INFORMATION</h3>
-                            <div>
-                                <span>Publisher: </span>
-                                <span>{games.gamePublisher}</span>
-                            </div>
-                        </Col>
+                        <Col sm={4}></Col>
                     </Row>
                 </Container>
             </div>

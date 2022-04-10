@@ -15,3 +15,57 @@
 body {
     background-color: aqua;
 } */
+
+.main_container {
+    background-color: #23262e;
+    color: white;
+}
+
+.card_parent.card {
+    background-color: transparent;
+    border: 0px;
+}
+
+.checkout_container {
+    background: linear-gradient(
+        -60deg,
+        rgba(226, 244, 255, 0.3) 5%,
+        rgba(84, 107, 115, 0.3) 95%
+    );
+}
+
+.btn-green-moon {
+    background: #56ab2f; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #a8e063,
+        #56ab2f
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #a8e063,
+        #56ab2f
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    border: 3px solid #eee;
+}
+
+button.col.btn.btn-green-moon {
+    color: white;
+    /* color: #d2efa9; */
+    /* background: transparent; */
+    text-shadow: 1px 1px 0px rgb(0 0 0 / 30%);
+    cursor: pointer;
+    width: 100%;
+}
+
+.game_tag_container.list-group {
+    background-color: rgba(103, 193, 245, 0.2);
+}
+
+.game_tag.list-group-item {
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: rgba(103, 193, 245, 0.2);
+}
