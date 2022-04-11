@@ -21,8 +21,11 @@
         </style>
     </head>
     <body class="antialiased">
-       
+       <!-- <p>{{session('id')}}</p> -->
+        <input type='hidden' id='userid' value="{{session('id')}}"/>
         <div id="gameDetails"></div>
+      
     </body>
     <script src="/js/app.js"></script>
+    
 </html>
