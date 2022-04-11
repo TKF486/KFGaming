@@ -9,6 +9,7 @@ import {
     Row,
     Col,
     Card,
+    CardGroup,
     ListGroup,
     Table,
 } from "react-bootstrap";
@@ -37,27 +38,31 @@ export default class GameListing extends Component {
     render() {
         let games = this.state.games.map((game) => {
             return (
-                <tr key={game.id}>
-                    <td>{game.id}</td>
-                    <td>{game.gameName}</td>
-                    <td>{game.gameDesc}</td>
-                </tr>
+                <div className="container">
+                    
+                    <Card style={{ width: "18rem" }}>
+                        <Card.Img variant="top" src={"/storage/game/" + game.mainImage} />
+                        <Card.Body>
+                            <Card.Title>{game.gameName}</Card.Title>
+                            <Card.Text>{game.gameDesc}</Card.Text>
+                        </Card.Body>
+                        <Card.Footer>
+                            <small className="text-muted">
+                                RM{game.gamePrice}
+                            </small>
+                            {/* <Button>Store Page</Button> */}
+                        </Card.Footer>
+                    </Card>
+                   
+                </div>
             );
         });
 
         return (
             <div className="container">
-                <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src="/img/apex.png" />
-                    <Card.Body>
-                        <Card.Title>Apex</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title
-                            and make up the bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
+                
+                    <CardGroup>{games}</CardGroup>
+                
             </div>
         );
     }
