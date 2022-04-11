@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM, { render } from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Image from "react-bootstrap/Image";
+import Form from "react-bootstrap/Form";
 import {
     Button,
     Carousel,
@@ -36,8 +37,13 @@ export default class GameDetails extends Component {
         this.loadGame();
     }
 
+    handleSubmit = (event) => {
+        alert({ sessionValue });
+    };
+
     render() {
         let games = this.state.games;
+        var sessionValue = document.getElementById("userid").value;
         return (
             <div className="main_container">
                 <Container fluid="xxl">
@@ -119,9 +125,25 @@ export default class GameDetails extends Component {
                                             <h5>RM179.99</h5>
                                         </Col>
                                         <Col sm={3}>
-                                            <button class="col btn btn-green-moon">
-                                                <span>Checkout</span>
-                                            </button>
+                                            <form
+                                                onSubmit={this.handleSubmit}
+                                                action="addOrder"
+                                                method="POST"
+                                            >
+                                                <input
+                                                    type="text"
+                                                    id="userid"
+                                                    value={sessionValue}
+                                                />
+                                                <input
+                                                    type="text"
+                                                    id="gameid"
+                                                    value="14"
+                                                />
+                                                <button class="col btn btn-green-moon">
+                                                    <span>Checkout</span>
+                                                </button>
+                                            </form>
                                         </Col>
                                     </Row>
                                 </Container>
