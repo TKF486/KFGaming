@@ -46,7 +46,6 @@ export default class GameDetails extends Component {
         var sessionValue = document.getElementById("userid").value;
         return (
             <div className="main_container">
-                <p>{sessionValue}</p>
                 <Container fluid="xxl">
                     <Row>
                         <Col sm={8}>

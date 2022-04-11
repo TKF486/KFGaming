@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\OrderController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -60,5 +61,13 @@ Route::get('/register/admin', [RegisterController::class,'showAdminRegisterForm'
 Route::post('/register/admin', [RegisterController::class, 'createAdmin']);
 Route::get('logout', [LoginController::class,'logout']);
 //Route::get('datatest', [LoginController::class,'test']);
+
+
+//order
+Route::get('/order/index', [OrderController::class, 'index']);
+// Route::get('/gameDetails/{id}', [OrderController::class, 'show']);
+Route::post('/order/store', [OrderController::class, 'store']);
+// Route::put('/edit/{id}', [OrderController::class, 'update']);
+Route::delete('/order/{id}', [OrderController::class, 'destroy']);
 
 
