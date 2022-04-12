@@ -24,8 +24,15 @@ export default class GameDetails extends Component {
     }
 
     loadGame() {
+        const queryString = window.location.search;
+        console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
+        console.log(urlParams);
+        const gameID = urlParams.get("gameID");
+        console.log(gameID);
+
         axios
-            .get("http://127.0.0.1:8000/api/gameDetails/" + id)
+            .get("http://127.0.0.1:8000/api/gameDetails/" + gameID)
             .then((response) => {
                 this.setState({
                     games: response.data,

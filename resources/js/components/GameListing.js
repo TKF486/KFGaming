@@ -47,7 +47,7 @@ export default class GameListing extends Component {
                             />
                             <Card.Body>
                                 <Card.Title>
-                                    <a href={"/gameDetails/" + game.id}>
+                                    <a href={"/gameDetails/?gameID=" + game.id}>
                                         {game.gameName}
                                     </a>
                                 </Card.Title>
