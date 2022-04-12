@@ -3,33 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\GameUserUser;
+use App\Models\Order;
 
-class CheckoutController extends Controller
+class OrderController extends Controller
 {
-    //insert into GameUser_user table
+    //insert into Order_user table
     public function store(Request $req){
-        return GameUserUser::create($req->all());
+        return Order::create($req->all());
     }
 
     public function index(){
-        return GameUser::all();
+        return Order::all();
     }
 
     public function show(Request $req, $id){
-        $GameUser = GameUser::findOrFail($id);
-        return $GameUser;
+        $Order = Order::findOrFail($id);
+        return $Order;
     }
 
     public function update(Request $req, $id){
-        $GameUser = GameUser::findOrFail($id);
-        $GameUser->update($req->all());
-        return $GameUser;
+        $Order = Order::findOrFail($id);
+        $Order->update($req->all());
+        return $Order;
     }
 
     public function destroy($id){
-        $GameUser = GameUser::findOrFail($id);
-        $GameUser->delete();
+        $Order = Order::findOrFail($id);
+        $Order->delete();
         return 204;
     }
 }

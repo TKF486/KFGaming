@@ -15,6 +15,8 @@ import {
 } from "react-bootstrap";
 import axios from "axios";
 
+import CheckoutModal from "./CheckoutModal";
+
 export default class GameDetails extends Component {
     constructor() {
         super();
@@ -25,11 +27,8 @@ export default class GameDetails extends Component {
 
     loadGame() {
         const queryString = window.location.search;
-        console.log(queryString);
         const urlParams = new URLSearchParams(queryString);
-        console.log(urlParams);
         const gameID = urlParams.get("gameID");
-        console.log(gameID);
 
         axios
             .get("http://127.0.0.1:8000/api/gameDetails/" + gameID)
@@ -44,9 +43,9 @@ export default class GameDetails extends Component {
         this.loadGame();
     }
 
-    handleSubmit = (event) => {
-        alert({ sessionValue });
-    };
+    handleSubmit() {
+        alert("The form was submitted");
+    }
 
     render() {
         let games = this.state.games;
@@ -147,9 +146,10 @@ export default class GameDetails extends Component {
                                                     id="gameid"
                                                     value="14"
                                                 />
-                                                <button class="col btn btn-green-moon">
+                                                {/* <button class="col btn btn-green-moon">
                                                     <span>Checkout</span>
-                                                </button>
+                                                </button> */}
+                                                <CheckoutModal />
                                             </form>
                                         </Col>
                                     </Row>

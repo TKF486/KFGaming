@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\controllers\GameController;
-use App\Http\Controllers\Auth\OrderController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +29,6 @@ Route::delete('gameDetail/{id}', [GameController::class, 'destroy']);
 //order
 Route::get('orders', [OrderController::class, 'index']);
 Route::post('order', [OrderController::class,'store']);
-// Route::get('gameDetails/{id}', [OrderController::class, 'show']);
+Route::get('orders/{id}', [OrderController::class, 'show']);
 Route::put('orderUpdate/{id}', [OrderController::class, 'update']);
 Route::delete('order/{id}', [OrderController::class, 'destroy']);

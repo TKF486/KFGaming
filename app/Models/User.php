@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Game;
+use App\Models\Order;
 
 class User extends Authenticatable
 {
@@ -36,7 +37,12 @@ class User extends Authenticatable
 
     public function games()
     {
-        return $this->hasMany(Game::class);
+        return $this->belongstoMany(Game::class);
+    }
+
+    public function orders()
+    {
+        return $this->belongstoMany(Order::class);
     }
 
 }

@@ -15,6 +15,7 @@ require("./bootstrap");
 require("./components/GameDetails");
 require("./components/GameListing");
 require("./components/Testing");
+require("./components/CheckoutModal");
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
