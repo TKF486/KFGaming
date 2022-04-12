@@ -22,6 +22,13 @@ export default class GameDetails extends Component {
         super();
         this.state = {
             games: "",
+            order: "",
+            newOrderData: {
+                creditCard: "",
+                address: "",
+                user_id: "",
+                game_id: "",
+            },
         };
     }
 

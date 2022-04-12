@@ -28,7 +28,7 @@ Route::delete('gameDetail/{id}', [GameController::class, 'destroy']);
 
 //order
 Route::get('orders', [OrderController::class, 'index']);
-Route::post('order', [OrderController::class,'store']);
+Route::post('createOrder', [OrderController::class,'store']);
 Route::get('orders/{id}', [OrderController::class, 'show']);
 Route::put('orderUpdate/{id}', [OrderController::class, 'update']);
 Route::delete('order/{id}', [OrderController::class, 'destroy']);
