@@ -39,26 +39,28 @@ export default class GameListing extends Component {
         let games = this.state.games.map((game) => {
             return (
                 <div className="container">
-                    <Card style={{ width: "18rem" }}>
-                        <Card.Img
-                            variant="top"
-                            src={"/storage/game/" + game.mainImage}
-                        />
-                        <Card.Body>
-                            <Card.Title>
-                                <a href="/gameDetails?=gameId=@game.gameId">
-                                    {game.gameName}
-                                </a>
-                            </Card.Title>
-                            <Card.Text>{game.gameDesc}</Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">
-                                RM{game.gamePrice}
-                            </small>
-                            {/* <Button>Store Page</Button> */}
-                        </Card.Footer>
-                    </Card>
+                    <Col>
+                        <Card style={{ width: "18rem" }}>
+                            <Card.Img
+                                variant="top"
+                                src={"/storage/game/" + game.mainImage}
+                            />
+                            <Card.Body>
+                                <Card.Title>
+                                    <a href={"/gameDetails/" + game.id}>
+                                        {game.gameName}
+                                    </a>
+                                </Card.Title>
+                                <Card.Text>{game.gameDesc}</Card.Text>
+                            </Card.Body>
+                            <Card.Footer>
+                                <small className="text-muted">
+                                    RM{game.gamePrice}
+                                </small>
+                                {/* <Button>Store Page</Button> */}
+                            </Card.Footer>
+                        </Card>
+                    </Col>
                 </div>
             );
         });
@@ -67,9 +69,7 @@ export default class GameListing extends Component {
             <div className="container">
                 <Row xs={1} md={3} className="g-4">
                     {Array.from({ length: 4 }).map((_, idx) => (
-                        <Col>
-                            <CardGroup>{games}</CardGroup>
-                        </Col>
+                        <CardGroup>{games}</CardGroup>
                     ))}
                 </Row>
             </div>
