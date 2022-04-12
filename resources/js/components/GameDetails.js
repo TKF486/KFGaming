@@ -25,7 +25,7 @@ export default class GameDetails extends Component {
 
     loadGame() {
         axios
-            .get("http://127.0.0.1:8000/api/gameDetails/14")
+            .get("http://127.0.0.1:8000/api/gameDetails/" + id)
             .then((response) => {
                 this.setState({
                     games: response.data,
