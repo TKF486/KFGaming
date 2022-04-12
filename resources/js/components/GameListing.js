@@ -39,11 +39,17 @@ export default class GameListing extends Component {
         let games = this.state.games.map((game) => {
             return (
                 <div className="container">
-                    
                     <Card style={{ width: "18rem" }}>
-                        <Card.Img variant="top" src={"/storage/game/" + game.mainImage} />
+                        <Card.Img
+                            variant="top"
+                            src={"/storage/game/" + game.mainImage}
+                        />
                         <Card.Body>
-                            <Card.Title>{game.gameName}</Card.Title>
+                            <Card.Title>
+                                <a href="/gameDetails?=gameId=@game.gameId">
+                                    {game.gameName}
+                                </a>
+                            </Card.Title>
                             <Card.Text>{game.gameDesc}</Card.Text>
                         </Card.Body>
                         <Card.Footer>
@@ -53,16 +59,19 @@ export default class GameListing extends Component {
                             {/* <Button>Store Page</Button> */}
                         </Card.Footer>
                     </Card>
-                   
                 </div>
             );
         });
 
         return (
             <div className="container">
-                
-                    <CardGroup>{games}</CardGroup>
-                
+                <Row xs={1} md={3} className="g-4">
+                    {Array.from({ length: 4 }).map((_, idx) => (
+                        <Col>
+                            <CardGroup>{games}</CardGroup>
+                        </Col>
+                    ))}
+                </Row>
             </div>
         );
     }
