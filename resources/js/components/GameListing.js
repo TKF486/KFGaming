@@ -67,11 +67,11 @@ export default class GameListing extends Component {
 
         return (
             <div className="container">
-                <Row xs={1} md={3} className="g-4">
-                    {Array.from({ length: 4 }).map((_, idx) => (
-                        <CardGroup>{games}</CardGroup>
-                    ))}
-                </Row>
+                <CardGroup>
+                    <Row xs={3} md={3} className="g-4">
+                        {games}
+                    </Row>
+                </CardGroup>
             </div>
         );
     }

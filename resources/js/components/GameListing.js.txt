@@ -39,27 +39,39 @@ export default class GameListing extends Component {
         let games = this.state.games.map((game) => {
             return (
                 <div className="container">
-                    <Card style={{ width: "18rem" }}>
-                        <Card.Img variant="top" src={game.image1} />
-                        <Card.Body>
-                            <Card.Title>{game.gameName}</Card.Title>
-                            <Card.Text>{game.gameDesc}</Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">
-                                Released {game.gameReleaseDate}
-                            </small>
-                        </Card.Footer>
-                    </Card>
+                    <Col>
+                        <Card style={{ width: "18rem" }}>
+                            <Card.Img
+                                variant="top"
+                                src={"/storage/game/" + game.mainImage}
+                            />
+                            <Card.Body>
+                                <Card.Title>
+                                    <a href={"/gameDetails/" + game.id}>
+                                        {game.gameName}
+                                    </a>
+                                </Card.Title>
+                                <Card.Text>{game.gameDesc}</Card.Text>
+                            </Card.Body>
+                            <Card.Footer>
+                                <small className="text-muted">
+                                    RM{game.gamePrice}
+                                </small>
+                                {/* <Button>Store Page</Button> */}
+                            </Card.Footer>
+                        </Card>
+                    </Col>
                 </div>
             );
         });
 
         return (
             <div className="container">
-                <CardGroup>
-                    <Card>{games}</Card>
-                </CardGroup>
+                <Row xs={1} md={3} className="g-4">
+                    {Array.from({ length: 4 }).map((_, idx) => (
+                        <CardGroup>{games}</CardGroup>
+                    ))}
+                </Row>
             </div>
         );
     }
