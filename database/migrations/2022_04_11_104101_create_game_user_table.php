@@ -15,8 +15,8 @@ class CreateGameUserTable extends Migration
     {
         Schema::create('game_user', function (Blueprint $table) {
             $table->id();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('game_id')->references('id')->on('games');
+            $table->foreignId('game_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateGameUserTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('game_user');
     }
 }
