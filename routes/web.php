@@ -24,6 +24,10 @@ Route::get('/',  function () {
     return view('welcome');
 });
 
+Route::get('/home',  function () {
+    return view('welcome');
+});
+
 // Route::get('/list/{id}', [GameController::class,'testOneGame']);
 Route::view('gamelisting','gameListing');
 // Route::view('app','app');
