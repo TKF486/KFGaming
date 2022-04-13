@@ -1,3 +1,4 @@
+<x-header data="Game Details" />
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>

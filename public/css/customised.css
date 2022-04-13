@@ -75,7 +75,7 @@ button.col.btn.btn-green-moon {
 /* Top Nav Style */
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #23262e;
+    background-color: #000;
     overflow: hidden;
 }
 
@@ -92,7 +92,7 @@ button.col.btn.btn-green-moon {
 /* Change the color of links on hover */
 .topnav a:hover {
     background-color: #ddd;
-    color: #23262e;
+    color: #333;
 }
 
 /* Add a color to the active/current link */

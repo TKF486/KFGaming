@@ -1,0 +1,213 @@
+import React, { Component, useState } from "react";
+import ReactDOM, { render } from "react-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import {
+    Button,
+    Image,
+    Form,
+    Carousel,
+    Container,
+    Row,
+    Col,
+    Card,
+    ListGroup,
+    Table,
+    Modal,
+} from "react-bootstrap";
+// import {
+//     Table,
+//     Button,
+//     Modal,
+//     ModalHeader,
+//     ModalBody,
+//     ModalFooter,
+//     Input,
+//     FormGroup,
+//     Label,
+// } from "reactstrap";
+import axios from "axios";
+
+export default class CheckoutModal extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            games: [],
+            newGameModal: false,
+            newGameData: {
+                gameId: "",
+                userId: "",
+                creditCard: "",
+                address: "",
+            }, // initial state for Post data
+        };
+    }
+
+    // loadPost() {
+    //     const queryString = window.location.search;
+    //     const urlParams = new URLSearchParams(queryString);
+    //     const gameID = urlParams.get("gameID");
+    //     // To communicate with the Laravel backend and use the API endpoint to retrieve the database table games
+    //     // Communicate with the first API endpoint, then comes with the respond that changes the state (get the returns):
+    //     axios
+    //         .get("http://127.0.0.1:8000/api/gameDetails/" + gameID)
+    //         .then((response) => {
+    //             this.setState({
+    //                 games: response.data,
+    //             });
+    //         });
+    // }
+
+    addGame() {
+        const [show, setShow] = useState(false);
+        setShow(false);
+        axios
+            .post("http://127.0.0.1:8000/api/game", this.state.newGameData)
+            .then((response) => {
+                let { games } = this.state;
+                // this.loadPost(); // remount
+                this.setState({
+                    games,
+                    newGameModal: false,
+                    newGameData: {
+                        gameId: "",
+                        userId: "",
+                        creditCard: "",
+                        address: "",
+                    },
+                });
+            });
+    }
+
+    // componentWillMount() {
+    //     this.loadPost();
+    // }
+
+    togglenewGameModal() {
+        const [show, setShow] = useState(false);
+        setShow(true);
+
+        this.setState({
+            newGameModal: !this.state.newGameModal,
+        });
+    }
+
+    render() {
+        return (
+            <div>
+                <Button
+                    onClick={this.togglenewGameModal.bind(this)}
+                    className="col btn btn-green-moon"
+                >
+                    Checkout
+                </Button>
+
+                <Modal
+                    isOpen={this.state.newGameModal}
+                    toggle={this.togglenewGameModal.bind(this)}
+                >
+                    <Modal.Header toggle={this.togglenewGameModal.bind(this)}>
+                        <Modal.Title>Modal heading</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Form>
+                            <Form.Group
+                                className="mb-3"
+                                controlId="exampleForm.ControlInput1"
+                            >
+                                <Form.Label>Credit Card</Form.Label>
+                                <Form.Control
+                                    id="creditCard"
+                                    defaultValue={
+                                        this.state.newGameData.creditCard
+                                    }
+                                    placeholder="5555555555554444"
+                                    autoFocus
+                                    onChange={(e) => {
+                                        let { newGameData } = this.state;
+                                        newGameData.creditCard = e.target.value;
+                                        this.setState({ newGameData });
+                                    }}
+                                />
+                            </Form.Group>
+                            <Form.Group
+                                className="mb-3"
+                                controlId="exampleForm.ControlTextarea1"
+                            >
+                                <Form.Label>Address</Form.Label>
+                                <Form.Control
+                                    as="textarea"
+                                    rows={3}
+                                    id="address"
+                                    defaultValue={
+                                        this.state.newGameData.address
+                                    }
+                                    onChange={(e) => {
+                                        let { newGameData } = this.state;
+                                        newGameData.address = e.target.value;
+                                        this.setState({ newGameData });
+                                    }}
+                                />
+                            </Form.Group>
+                            <Form.Group
+                                className="mb-3"
+                                controlId="exampleForm.ControlTextarea1"
+                            >
+                                <Form.Label>Game ID</Form.Label>
+                                <Form.Control
+                                    as="textarea"
+                                    rows={3}
+                                    id="gameId"
+                                    defaultValue={this.state.newGameData.gameId}
+                                    onChange={(e) => {
+                                        let { newGameData } = this.state;
+                                        newGameData.gameId = e.target.value;
+                                        this.setState({ newGameData });
+                                    }}
+                                />
+                            </Form.Group>
+                            <Form.Group
+                                className="mb-3"
+                                controlId="exampleForm.ControlTextarea1"
+                            >
+                                <Form.Label>User ID</Form.Label>
+                                <Form.Control
+                                    as="textarea"
+                                    rows={3}
+                                    id="userId"
+                                    defaultValue={this.state.newGameData.userId}
+                                    onChange={(e) => {
+                                        let { newGameData } = this.state;
+                                        newGameData.userId = e.target.value;
+                                        this.setState({ newGameData });
+                                    }}
+                                />
+                            </Form.Group>
+                        </Form>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button
+                            variant="secondary"
+                            onClick={this.togglenewGameModal.bind(this)}
+                        >
+                            Close
+                        </Button>
+                        <Button
+                            variant="primary"
+                            onClick={this.addGame.bind(this)}
+                        >
+                            Submit
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            </div>
+        );
+    }
+}
+
+if (document.getElementById("checkoutModal")) {
+    ReactDOM.render(
+        <CheckoutModal />,
+        document.getElementById("checkoutModal")
+    );
+}
