@@ -15,7 +15,7 @@ import {
 } from "react-bootstrap";
 import axios from "axios";
 
-import CheckoutModal from "./CheckoutModal";
+// import CheckoutModal from "./CheckoutModal";
 
 export default class GameDetails extends Component {
     constructor() {
@@ -51,7 +51,16 @@ export default class GameDetails extends Component {
     }
 
     handleSubmit() {
-        alert("The form was submitted");
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const gameID = urlParams.get("gameID");
+        var sessionValue = document.getElementById("userid").value;
+        location.replace(
+            "http://127.0.0.1:8000/Checkout/?gameID=" +
+                gameID +
+                "&userID=" +
+                sessionValue
+        );
     }
 
     render() {
@@ -138,26 +147,12 @@ export default class GameDetails extends Component {
                                             <h5>RM179.99</h5>
                                         </Col>
                                         <Col sm={3}>
-                                            <form
-                                                onSubmit={this.handleSubmit}
-                                                action="addOrder"
-                                                method="POST"
+                                            <button
+                                                onClick={this.handleSubmit}
+                                                class="col btn btn-green-moon"
                                             >
-                                                <input
-                                                    type="text"
-                                                    id="userid"
-                                                    value={sessionValue}
-                                                />
-                                                <input
-                                                    type="text"
-                                                    id="gameid"
-                                                    value="14"
-                                                />
-                                                {/* <button class="col btn btn-green-moon">
-                                                    <span>Checkout</span>
-                                                </button> */}
-                                                <CheckoutModal />
-                                            </form>
+                                                <span>Checkout</span>
+                                            </button>
                                         </Col>
                                     </Row>
                                 </Container>

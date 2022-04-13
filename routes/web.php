@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\OrderController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -74,4 +74,9 @@ Route::post('/order/store', [OrderController::class, 'store']);
 // Route::put('/edit/{id}', [OrderController::class, 'update']);
 Route::delete('/order/{id}', [OrderController::class, 'destroy']);
 
+//checkout
+Route::get('/Checkout', function () {
+    return view('checkout');
+});
 
+Route::post('Checkout/createOrder', [OrderController::class,'createOrder']);

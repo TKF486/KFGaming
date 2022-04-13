@@ -157,3 +157,32 @@ button.col.btn.btn-green-moon {
         border: 1px solid #ccc;
     }
 }
+
+.body_container {
+    background-color: #23262e;
+    height: 100%;
+    margin: 0px;
+    width: 100%;
+    padding: 0px;
+    position: absolute;
+}
+
+/* .container_1 {
+    height: 100%;
+    position: relative;
+    border: 3px solid green;
+    background-color: #bec9b2;
+} */
+
+.form_container {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #a8e063;
+    padding: 150px;
+    border: 1px solid rgb(245, 245, 245);
+    border-radius: 5%;
+}

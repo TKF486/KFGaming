@@ -8,28 +8,39 @@ use App\Models\Order;
 class OrderController extends Controller
 {
     //insert into Order_user table
-    public function store(Request $req){
-        return Order::create($req->all());
-    }
+    // public function store(Request $req){
+    //     return Order::create($req->all());
+    // }
 
-    public function index(){
-        return Order::all();
-    }
+    // public function index(){
+    //     return Order::all();
+    // }
 
-    public function show(Request $req, $id){
-        $Order = Order::findOrFail($id);
-        return $Order;
-    }
+    // public function show(Request $req, $id){
+    //     $Order = Order::findOrFail($id);
+    //     return $Order;
+    // }
 
-    public function update(Request $req, $id){
-        $Order = Order::findOrFail($id);
-        $Order->update($req->all());
-        return $Order;
-    }
+    // public function update(Request $req, $id){
+    //     $Order = Order::findOrFail($id);
+    //     $Order->update($req->all());
+    //     return $Order;
+    // }
 
-    public function destroy($id){
-        $Order = Order::findOrFail($id);
-        $Order->delete();
-        return 204;
+    // public function destroy($id){
+    //     $Order = Order::findOrFail($id);
+    //     $Order->delete();
+    //     return 204;
+    // }
+
+    public function createOrder(Request $req)
+    {
+        $order = new Order;
+        $order->game_id = $req->game_id;
+        $order->user_id = $req->user_id;
+        $order->creditCard = $req->creditCard;
+        $order->address = $req->address;
+        $order->save();
+        return redirect('gamelisting');
     }
 }
