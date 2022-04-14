@@ -2,7 +2,7 @@
 <div>
     <!-- Footer -->
     <footer class="bg-black">
-        <div class="container py-1">
+        <div class="container py-4">
             <div class="d-flex justify-content-center">
                 <p class="font-italic text-muted">KFGaming, created by KF and his friend in hell (T_T)</p>
             </div>
