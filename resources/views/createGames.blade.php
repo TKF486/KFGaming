@@ -1,3 +1,4 @@
+<x-header data="createGames" />
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -72,3 +73,4 @@
     <button type="submit">Submit</button>
     </form>
 </body>
+<x-footer/>
