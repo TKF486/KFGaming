@@ -28,7 +28,7 @@
 
     </body>
     <script src="/js/app.js"></script>
-    
+
 </html> -->
 
 <!DOCTYPE html>
@@ -46,22 +46,18 @@
   integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
   crossorigin="anonymous"/>
 <style>
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
+    body {
+        font-family: 'Nunito', sans-serif;
+    }
+</style>
     </head>
     <body class="antialiased">
        <!-- <p>{{session('id')}}</p> -->
         <input type='hidden' id='userid' value="{{session('id')}}"/>
         <div id="gameListing"></div>
-      
+
     </body>
     <script src="/js/app.js"></script>
-    
-</html>
 
 </html>
 <x-footer/>
