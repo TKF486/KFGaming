@@ -63,11 +63,17 @@ class UserController extends Controller
     }
 
     function user_order_relation($id){
-        // $user = Order::where('user_id', $id)->lists('game_id');
-        $gameList = Order::select('game_id')->where('user_id', $id)->get();
-        $gameID = $gameList['game_id'];
-        $gameData = Game::select('gameName','mainImage')->where('id', $gameID)->get();
-        // return $gameList;
-        return view('userGameList', ['games'=>$gameData]);
+        $games = Order::where('user_id', $id)->get('game_id');
+        $order1 = Game::select('gameName','mainImage')->where('id', $games[0]['game_id'])->get();
+        // return $games[0]['game_id'];
+        $length = count($games);
+        for($i = 1; $i < $length; $i++) {
+            $temp = Game::select('gameName','mainImage')->where('id', $games[$i]['game_id'])->get();
+            foreach($temp as $temps) {         
+                     $order1->add($temps);
+                 }
+        }
+        $final = $order1;
+        return view('userGameList', ['games'=>$final]);
     }
 }
