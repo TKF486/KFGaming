@@ -14,7 +14,6 @@
   crossorigin="anonymous"
   
 />
-
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
@@ -22,6 +21,8 @@
         </style>
     </head>
     <body class="antialiased">
+    @if (Route::has('login'))
+      @can(['isAdmin'])
     <h1>Game Listing</h1>
     <table border="1">
     <tr>
@@ -64,7 +65,7 @@
     <img src={{$game['image2']}} alt="img2" class="table_img">
     </td>
     <td><a href={{"deleteGame/".$game['id']}}>Delete</a></td>
-    <td><a href={{"update/".$game['id']}}>Update</a></td>
+    <td><a href={{"updateGame/".$game['id']}}>Update</a></td>
     </tr>
     @endforeach
 </table>
@@ -72,8 +73,8 @@
 <span>
     {{$games->links()}}
 </span>
-
-
+   @endcanany
+@endif
       
     </body>
 

@@ -89,3 +89,6 @@ Route::get('/admin', function () {
 
 Route::get('adminGame', [AdminController::class,'gameDetails']);
 Route::get('deleteGame/{id}', [AdminController::class,'deleteGame']);
+
+Route::get('updateGame/{id}', [AdminController::class,'showUpdate']);
+Route::post('updateGame/{id}', [AdminController::class,'updateGame']);
