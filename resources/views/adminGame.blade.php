@@ -1,4 +1,4 @@
-<x-header data="Game Details" />
+<x-header data="adminGame" />
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -24,6 +24,9 @@
     @if (Route::has('login'))
       @can(['isAdmin'])
     <h1>Game Listing</h1>
+    <a href="createGames">
+    <button>Create Game</button>
+    </a>
     <table border="1">
     <tr>
     <td>ID</td>
@@ -101,3 +104,4 @@ tr:nth-child(even) {
 </style>
 
 </html>
+<x-footer/>

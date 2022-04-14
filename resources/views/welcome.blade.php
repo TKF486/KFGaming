@@ -19,9 +19,8 @@
        <!-- <p>{{session('id')}}</p> -->
         <input type='hidden' id='userid' value="{{session('id')}}"/>
         <div id="gameListing"></div>
-      
+
     </body>
     <script src="/js/app.js"></script>
-
 </html>
 <x-footer/>
