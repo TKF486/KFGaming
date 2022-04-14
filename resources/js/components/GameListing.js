@@ -71,27 +71,31 @@ export default class GameListing extends Component {
         return (
             <div className="main_container">
                 <Row>
-                    <Carousel>
-                        <Carousel.Item>
-                            <Image
-                                className="d-block  w-50 justify-content-md-center"
-                                src="https://images.greenmangaming.com/52afcbfc92cd440bbe33e93f76e1b239/254fcb09b85345c78d68f6dcb336786a.jpg"
-                                alt="First slide"
-                                fluid
-                            />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <Image
-                                className="d-block  w-50 justify-content-md-center"
-                                src="https://images.greenmangaming.com/70024f3cecd4441996358916a06675d0/9f9704a98aa04b9eb4d53770f4cde91d.jpg"
-                                alt="Second slide"
-                                fluid
-                            />
-                        </Carousel.Item>
-                    </Carousel>
+                    <Col sm={3}></Col>
+                    <Col sm={6}>
+                        <Carousel>
+                            <Carousel.Item>
+                                <Image
+                                    className="d-block  w-100"
+                                    src="https://images.greenmangaming.com/52afcbfc92cd440bbe33e93f76e1b239/254fcb09b85345c78d68f6dcb336786a.jpg"
+                                    alt="First slide"
+                                    fluid
+                                />
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <Image
+                                    className="d-block  w-100"
+                                    src="https://images.greenmangaming.com/70024f3cecd4441996358916a06675d0/9f9704a98aa04b9eb4d53770f4cde91d.jpg"
+                                    alt="Second slide"
+                                    fluid
+                                />
+                            </Carousel.Item>
+                        </Carousel>
+                    </Col>
+                    <Col sm={3}></Col>
                 </Row>
                 <CardGroup className="card_parent" style={{ border: "10px" }}>
-                    <Row xs={3} md={3} className="g-4 cardListing_parent">
+                    <Row xs={4} md={4} className="g-4 cardListing_parent">
                         {games}
                     </Row>
                 </CardGroup>

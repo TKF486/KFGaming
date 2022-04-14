@@ -200,8 +200,8 @@ button.col.btn.btn-green-moon {
     display: block;
 }
 
-.g-4.cardListing_parent.row.row-cols-md-3.row-cols-3 {
+.g-4.cardListing_parent.row.row-cols-md-4.row-cols-4 {
     height: 100%;
     width: 100%;
-    padding: 150px;
+    padding: 82px;
 }
