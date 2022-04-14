@@ -91,7 +91,7 @@ export default class GameListing extends Component {
                     </Carousel>
                 </Row>
                 <CardGroup className="card_parent" style={{ border: "10px" }}>
-                    <Row xs={3} md={3} className="g-4">
+                    <Row xs={3} md={3} className="g-4 cardListing_parent">
                         {games}
                     </Row>
                 </CardGroup>
