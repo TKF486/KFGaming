@@ -68,6 +68,10 @@ Route::post('/register/admin', [RegisterController::class, 'createAdmin']);
 Route::get('logout', [LoginController::class,'logout']);
 //Route::get('datatest', [LoginController::class,'test']);
 
+Route::group(['middleware'=> ['protectedPage']], function()
+{
+    Route::get('adminGame', [AdminController::class,'gameDetails']);
+});
 
 //order
 Route::get('/order/index', [OrderController::class, 'index']);
@@ -87,7 +91,7 @@ Route::get('/admin', function () {
     return view('admin', [UserController::class,'userinner']);
 });
 
-Route::get('adminGame', [AdminController::class,'gameDetails']);
+//
 Route::get('deleteGame/{id}', [AdminController::class,'deleteGame']);
 
 Route::get('updateGame/{id}', [AdminController::class,'showUpdate']);
