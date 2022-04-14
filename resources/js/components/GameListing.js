@@ -38,9 +38,12 @@ export default class GameListing extends Component {
     render() {
         let games = this.state.games.map((game) => {
             return (
-                <div className="container">
+                <div className="main_container">
                     <Col>
-                        <Card style={{ width: "18rem" }}>
+                        <Card
+                            className="card_parent"
+                            style={{ width: "18rem" }}
+                        >
                             <Card.Img
                                 variant="top"
                                 src={"/storage/game/" + game.mainImage}
@@ -66,8 +69,28 @@ export default class GameListing extends Component {
         });
 
         return (
-            <div className="container">
-                <CardGroup>
+            <div className="main_container">
+                <Row>
+                    <Carousel>
+                        <Carousel.Item>
+                            <Image
+                                className="d-block  w-100"
+                                src="https://images.greenmangaming.com/24b93a7b7cf2469aaa414c8a41c63b81/0fb07bd75c844e3c88f1146645ec68ac.jpg"
+                                alt="First slide"
+                                fluid
+                            />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <Image
+                                className="d-block  w-100"
+                                src="https://images.greenmangaming.com/24b93a7b7cf2469aaa414c8a41c63b81/0fb07bd75c844e3c88f1146645ec68ac.jpg"
+                                alt="Second slide"
+                                fluid
+                            />
+                        </Carousel.Item>
+                    </Carousel>
+                </Row>
+                <CardGroup className="card_parent">
                     <Row xs={3} md={3} className="g-4">
                         {games}
                     </Row>
