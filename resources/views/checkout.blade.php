@@ -31,12 +31,12 @@
 
                 <div class="form-group">
                     <label for="creditCard">Credit Card:</label>
-                    <input type="text" name="creditCard" class="form-control" placeholder="Enter Credit Card Number">
+                    <input type="text" name="creditCard" class="form-control" placeholder="Enter Credit Card Number" required>
                 </div>
                 <br>
                 <div class="form-group">
                     <div><label for="creditCard">Address:</label></div>
-                    <div><textarea name="address" placeholder="Enter your address" rows="5" cols="50"></textarea></div>
+                    <div><textarea name="address" placeholder="Enter your address" rows="5" cols="50" required></textarea></div>
                 </div>
 
 
