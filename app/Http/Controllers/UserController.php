@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Models\Order;
+use App\Models\Game;
 
 class UserController extends Controller
 {
@@ -60,4 +62,12 @@ class UserController extends Controller
         return DB::select("select * from users");
     }
 
+    function user_order_relation($id){
+        // $user = Order::where('user_id', $id)->lists('game_id');
+        $gameList = Order::select('game_id')->where('user_id', $id)->get();
+        $gameID = $gameList['game_id'];
+        $gameData = Game::select('gameName','mainImage')->where('id', $gameID)->get();
+        // return $gameList;
+        return view('userGameList', ['games'=>$gameData]);
+    }
 }

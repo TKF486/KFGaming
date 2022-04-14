@@ -44,5 +44,4 @@ class User extends Authenticatable
     {
         return $this->belongstoMany(Order::class);
     }
-
 }
