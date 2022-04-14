@@ -1,4 +1,4 @@
-<x-header data="updateGame" />
+<x-header data="Update Game" />
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -18,60 +18,90 @@
 </head>
 
 <body>
+    <div class="main_container">
+    <div style="margin-left: 50px">    
+        <h1>Update Game</h1>
+        <form action="updateGame" method="POST" enctype="multipart/form-data">
+        @csrf
+        <input type="hidden" name="id" value="{{$data['id']}}">
+        <label for="gameName">Game Name</label>
+        <input type="text" name="gameName" value="{{$data['gameName']}}" required>
+        @error('gameName')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+        <br><br>
 
-    <h1>Update Games</h1>
-    <form action="updateGame" method="POST" enctype="multipart/form-data">
-    @csrf
-    <input type="hidden" name="id" value="{{$data['id']}}">
-    <label for="gameName">gameName</label>
-    <input type="text" name="gameName" value="{{$data['gameName']}}">
-    <br><br>
+        <label for="gamePrice">Game Price</label>
+        <input type="text" name="gamePrice" value="{{$data['gamePrice']}}" required>
+        @error('gamePrice')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+        <br><br>
 
-    <label for="gamePrice">gamePrice</label>
-    <input type="text" name="gamePrice" value="{{$data['gamePrice']}}">
-    <br><br>
+        <label for="gameDesc">Game Description</label>
+        <input type="text" name="gameDesc" value="{{$data['gameDesc']}}" required>
+        @error('gameDesc')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+        <br><br>
 
-    <label for="gameDesc">gameDesc</label>
-    <input type="text" name="gameDesc" value="{{$data['gameDesc']}}">
-    <br><br>
+        <label for="gamePublisher">Game Publisher</label>
+        <input type="text" name="gamePublisher" value="{{$data['gamePublisher']}}" required>
+        @error('gamePublisher')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+        <br><br>
 
-    <label for="gamePublisher">gamePublisher</label>
-    <input type="text" name="gamePublisher" value="{{$data['gamePublisher']}}">
-    <br><br>
+        <label for="gameAgeRating">Age Rating</label>
+        <input type="text" name="gameAgeRating" value="{{$data['gameAgeRating']}}" required>
+        @error('gameAgeRating')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+        <br><br>
 
-    <label for="gameAgeRating">gameAgeRating</label>
-    <input type="text" name="gameAgeRating" value="{{$data['gameAgeRating']}}">
-    <br><br>
+        <label for="gameGenre">Game Genre</label>
+        <input type="text" name="gameGenre" value="{{$data['gameGenre']}}" required>
+        @error('gameGenre')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+        <br><br>
 
-    <label for="gameGenre">gameGenre</label>
-    <input type="text" name="gameGenre" value="{{$data['gameGenre']}}">
-    <br><br>
+        <label for="gameReleaseDate">Release Date</label>
+        <input type="date" name="gameReleaseDate" value="{{$data['gameReleaseDate']}}" required>
+        @error('gameReleaseDate')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+        <br><br>
 
-    <label for="gameName">gameReleaseDate</label>
-    <input type="date" name="gameReleaseDate" value="{{$data['gameReleaseDate']}}">
-    <br><br>
+        <label for="gameLanguage">Game Language</label>
+        <input type="text" name="gameLanguage" value="{{$data['gameLanguage']}}" required>
+        @error('gameLanguage')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+        <br><br>
 
-    <label for="gameName">gameLanguage</label>
-    <input type="text" name="gameLanguage" value="{{$data['gameLanguage']}}">
-    <br><br>
+        <label for="gameRequirement">Requirement</label>
+        <input type="text" name="gameRequirement" value="{{$data['gameRequirement']}}" required>
+        @error('gameRequirement')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+        <br><br>
 
-    <label for="gameRequirement">gameRequirement</label>
-    <input type="text" name="gameRequirement" value="{{$data['gameRequirement']}}">
-    <br><br>
+        <label for="mainImage">Main Image</label>
+        <input type="file" name="file" value="{{$data['file']}}" required>
+        <br><br>
 
-    <label for="mainImage">main Image</label>
-    <input type="file" name="file" value="{{$data['file']}}">
-    <br><br>
+        <label for="image1">Image 1</label>
+        <input type="text" name="image1" value="{{$data['image1']}}">
+        <br><br>
 
-    <label for="image1">image1</label>
-    <input type="text" name="image1" value="{{$data['image1']}}">
-    <br><br>
+        <label for="image2">Image 2</label>
+        <input type="text" name="image2" value="{{$data['image2']}}">
+        <br><br>
 
-    <label for="image2">image2</label>
-    <input type="text" name="image2" value="{{$data['image2']}}">
-    <br><br>
-
-    <button type="submit">Submit</button>
-    </form>
+        <button type="submit" class="btn btn-green-moon">Submit</button>
+        </form>
+    </div>
+    </div>
 </body>
 <x-footer/>

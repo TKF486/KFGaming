@@ -68,6 +68,7 @@ class GameController extends Controller
 
     public function update(Request $req, $id){
         $game = Game::findOrFail($id);
+        $this->validator($req->all())->validate();
         $game->update($req->all());
         return $game;
     }

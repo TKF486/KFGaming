@@ -1,4 +1,4 @@
-<x-header data="createGames" />
+<x-header data="Create Games" />
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
