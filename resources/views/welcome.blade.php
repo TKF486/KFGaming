@@ -28,7 +28,6 @@
 
     </body>
     <script src="/js/app.js"></script>
-<<<<<<< Updated upstream
     
 </html> -->
 
@@ -63,8 +62,6 @@
     <script src="/js/app.js"></script>
     
 </html>
-=======
 
-</html> -->
+</html>
 <x-footer/>
->>>>>>> Stashed changes
