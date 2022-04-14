@@ -21,13 +21,25 @@
             </style>
         </head>
         <body class="main_container">
-            <a href="userGameList"><button>
-            Game bought
-            </button></a>
-            <div class="main_container">
-                <p>Name: {{session('name')}}</p>
-                <p>Email: {{session('email')}}</p>
-            </div>
+        <h1>Game Listing</h1>
+    <a href="createGames">
+    <button>Create Game</button>
+    </a>
+    <table border="1">
+    <tr>
+    <td>Game Name</td>
+    <td>Main Image</td>
+    </tr>
+
+    @foreach($games as $game)
+    <tr>
+    <td>{{$game['gameName']}}</td>
+    <td>
+    <img src={{ asset('storage/game/'.$game['mainImage']) }} alt="game_pic">
+    </td>
+    </tr>
+    @endforeach
+</table>
         </body>
         <script src="/js/app.js"></script>
         <x-footer/>
