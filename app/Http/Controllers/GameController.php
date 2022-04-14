@@ -3,13 +3,31 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\Game;
-
+use Validator;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'gameName' => 'required|string|max:30|unique:games',
+            'gamePrice' => 'required|numeric',
+            'gameDesc' => 'required|string|max:255',
+            'gamePublisher' => 'required|string|max:30',
+            'gameAgeRating' => 'required|int',
+            'gameGenre' => 'required|string|max:30',
+            'gameReleaseDate' => 'required|date',
+            'gameLanguage' => 'required|string|max:30',
+            'gameRequirement' => 'required|string|max:255',
+        ]);
+    }
+
     public function create(Request $req)
     {
+        $this->validator($req->all())->validate();
+
         $game = new Game;
         if ($req->hasFile('file')) {
             $req->validate([
