@@ -44,23 +44,6 @@ class UserController extends Controller
         return view('userProfile', ['users'=>$data]);
     }
 
-    function userInnerView() {
-        $data = User::all();
-        return view('userInnerView', ['users'=>$data]);
-    }
-
-    function userLoadView() {
-        $data = User::all();
-        return view('userLoadView', ['users'=>$data]);
-    }
-
-    function userList2() {
-        return User::all();
-    }
-
-    function userList() {
-        return DB::select("select * from users");
-    }
 
     function user_order_relation($id){
         $games = Order::where('user_id', $id)->get('game_id');
