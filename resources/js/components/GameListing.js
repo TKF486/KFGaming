@@ -42,7 +42,7 @@ export default class GameListing extends Component {
                     <Col>
                         <Card
                             className="card_parent"
-                            style={{ width: "18rem" }}
+                            style={{ border: "10px" }}
                         >
                             <Card.Img
                                 variant="top"
@@ -57,7 +57,7 @@ export default class GameListing extends Component {
                                 <Card.Text>{game.gameDesc}</Card.Text>
                             </Card.Body>
                             <Card.Footer>
-                                <small className="text-muted">
+                                <small className="price_text">
                                     RM{game.gamePrice}
                                 </small>
                                 {/* <Button>Store Page</Button> */}
@@ -74,23 +74,23 @@ export default class GameListing extends Component {
                     <Carousel>
                         <Carousel.Item>
                             <Image
-                                className="d-block  w-100"
-                                src="https://images.greenmangaming.com/24b93a7b7cf2469aaa414c8a41c63b81/0fb07bd75c844e3c88f1146645ec68ac.jpg"
+                                className="d-block  w-50 justify-content-md-center"
+                                src="https://images.greenmangaming.com/52afcbfc92cd440bbe33e93f76e1b239/254fcb09b85345c78d68f6dcb336786a.jpg"
                                 alt="First slide"
                                 fluid
                             />
                         </Carousel.Item>
                         <Carousel.Item>
                             <Image
-                                className="d-block  w-100"
-                                src="https://images.greenmangaming.com/24b93a7b7cf2469aaa414c8a41c63b81/0fb07bd75c844e3c88f1146645ec68ac.jpg"
+                                className="d-block  w-50 justify-content-md-center"
+                                src="https://images.greenmangaming.com/70024f3cecd4441996358916a06675d0/9f9704a98aa04b9eb4d53770f4cde91d.jpg"
                                 alt="Second slide"
                                 fluid
                             />
                         </Carousel.Item>
                     </Carousel>
                 </Row>
-                <CardGroup className="card_parent">
+                <CardGroup className="card_parent" style={{ border: "10px" }}>
                     <Row xs={3} md={3} className="g-4">
                         {games}
                     </Row>
