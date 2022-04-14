@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
@@ -33,7 +34,7 @@ Route::get('/home',  function () {
 Route::view('gamelisting','gameListing');
 // Route::view('app','app');
 
-
+Route::get('/userProfile', [UserController::class,'userProfile']);
 
 Auth::routes();
 
