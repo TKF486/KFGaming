@@ -7,6 +7,7 @@ use App\Http\Controllers\GameController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -80,3 +81,9 @@ Route::get('/Checkout', function () {
 });
 
 Route::post('Checkout/createOrder', [OrderController::class,'createOrder']);
+
+Route::get('/admin', function () {
+    return view('admin', [UserController::class,'userinner']);
+});
+
+Route::get('adminGame', [AdminController::class,'gameDetails']);
