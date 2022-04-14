@@ -12,7 +12,7 @@
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
   integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
   crossorigin="anonymous"
-  
+
 />
 
         <style>
@@ -25,7 +25,7 @@
        <p>{{session('id')}}</p> -->
         <!-- <input type='hidden' id='userid' value="{{session('id')}}"/>
         <div id="gameListing"></div>
-      
+
     </body>
     <script src="/js/app.js"></script>
     
@@ -62,3 +62,6 @@
     <script src="/js/app.js"></script>
     
 </html>
+
+</html>
+<x-footer/>

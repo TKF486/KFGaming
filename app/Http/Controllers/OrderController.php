@@ -12,9 +12,9 @@ class OrderController extends Controller
     //     return Order::create($req->all());
     // }
 
-    // public function index(){
-    //     return Order::all();
-    // }
+    public function index(){
+        return Order::all();
+    }
 
     // public function show(Request $req, $id){
     //     $Order = Order::findOrFail($id);
