@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Order;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -12,8 +13,10 @@ class OrderController extends Controller
     //     return Order::create($req->all());
     // }
 
-    public function index(){
-        return Order::all();
+    function orderView($id) {
+        $order = Order::find($id);
+        // DB::select("select * from orders where user_id = $id");
+        return view("orderView", ['order'=>$order]);
     }
 
     // public function show(Request $req, $id){

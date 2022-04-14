@@ -40,29 +40,36 @@ export default class GameListing extends Component {
             return (
                 <div className="main_container">
                     <Col>
-                        <Card
-                            className="card_parent"
-                            style={{ border: "10px" }}
-                        >
-                            <Card.Img
-                                variant="top"
-                                src={"/storage/game/" + game.mainImage}
-                            />
-                            <Card.Body>
-                                <Card.Title>
-                                    <a href={"/gameDetails/?gameID=" + game.id}>
-                                        {game.gameName}
-                                    </a>
-                                </Card.Title>
-                                <Card.Text>{game.gameDesc}</Card.Text>
-                            </Card.Body>
-                            <Card.Footer>
-                                <small className="price_text">
-                                    RM{game.gamePrice}
-                                </small>
-                                {/* <Button>Store Page</Button> */}
-                            </Card.Footer>
-                        </Card>
+                        <a href={"/gameDetails/?gameID=" + game.id}>
+                            <Card
+                                className="card_parent"
+                                style={{ border: "10px" }}
+                            >
+                                <Card.Img
+                                    variant="top"
+                                    src={"/storage/game/" + game.mainImage}
+                                />
+                                <Card.Body>
+                                    <Card.Title>
+                                        <a
+                                            href={
+                                                "/gameDetails/?gameID=" +
+                                                game.id
+                                            }
+                                        >
+                                            {game.gameName}
+                                        </a>
+                                    </Card.Title>
+                                    <Card.Text>{game.gameGenre}</Card.Text>
+                                </Card.Body>
+                                <Card.Footer>
+                                    <small className="price_text">
+                                        RM{game.gamePrice}
+                                    </small>
+                                    {/* <Button>Store Page</Button> */}
+                                </Card.Footer>
+                            </Card>
+                        </a>
                     </Col>
                 </div>
             );

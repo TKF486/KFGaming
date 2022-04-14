@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ url('css/customised.css') }}">
 <div>
     <!-- Footer -->
-    <footer class="bg-black">
+    <footer class="footer">
         <div class="container py-4">
             <div class="d-flex justify-content-center">
                 <p class="font-italic text-muted">KFGaming, created by KF and his friend in hell (T_T)</p>

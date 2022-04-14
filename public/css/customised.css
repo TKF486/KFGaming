@@ -77,6 +77,10 @@ button.col.btn.btn-green-moon {
 .topnav {
     background-color: #000;
     overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
 }
 
 /* Style the links inside the navigation bar */
@@ -181,10 +185,11 @@ button.col.btn.btn-green-moon {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    background-color: #a8e063;
-    padding: 150px;
-    border: 1px solid rgb(245, 245, 245);
+    background-color: rgba(103, 193, 245, 0.2);
+    padding: 48px;
     border-radius: 5%;
+    color: #fff;
+    box-shadow: 1px 2px #242424;
 }
 
 .price_text {
@@ -204,4 +209,34 @@ button.col.btn.btn-green-moon {
     height: 100%;
     width: 100%;
     padding: 82px;
+}
+
+a {
+    color: inherit;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #56ab2f;
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    text-align: center;
 }
