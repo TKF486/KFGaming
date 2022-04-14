@@ -132,7 +132,7 @@ export default class GameDetails extends Component {
                             </Card>
                         </Col>
                     </Row>
-                    <Row>
+                    <Row className="gameDetails">
                         <Col sm={8}>
                             <div>
                                 <Container className="checkout_container">
