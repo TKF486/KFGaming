@@ -22,7 +22,6 @@
         </head>
         <body class="main_container">
             <div class="main_container">
-                <p>User ID: {{session('id')}}</p>
                 <p>Name: {{session('name')}}</p>
                 <p>Email: {{session('email')}}</p>
             </div>
