@@ -15,6 +15,7 @@ class CreateGamesTable extends Migration
     {
         Schema::create('games', function
             (Blueprint $table) {
+                $table->engine = "InnoDB";
                 $table->id();
                 $table->string('gameName',30);
                 $table->decimal('gamePrice', 10, 2)->nullable();
@@ -26,8 +27,8 @@ class CreateGamesTable extends Migration
                 $table->string('gameLanguage',30);
                 $table->longtext('gameRequirement');
                 $table->string('mainImage',250)->nullable();
-                $table->string('image1',250)->nullable();
-                $table->string('image2',250)->nullable();
+                $table->longtext('image1')->nullable();
+                $table->longtext('image2')->nullable();
                 $table->timestamps();
             });
     }

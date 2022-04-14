@@ -14,6 +14,7 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
+            $table->engine = "InnoDB";
             $table->id();
             $table->foreignId('game_id')->constrained('games')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
