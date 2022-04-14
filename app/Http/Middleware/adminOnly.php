@@ -6,6 +6,7 @@ use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 
 class adminOnly
@@ -19,17 +20,8 @@ class adminOnly
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->hasSession()) {
-            $data = User::where('email', $request['email'])->first();
-            error_log('can fetch data in data.');
-            if ($data != null) {
-                $isAdmin = $data['role'] == 'admin';
-                error_log('admin is'.$isAdmin);
-                if ($isAdmin) {
-                    error_log('enter redirect');
-                    return $next($request);
-                }
-            }
+        if (Gate::allows('isAdmin')) {
+            return $next($request);
         }
         return redirect(RouteServiceProvider::HOME);
     }
