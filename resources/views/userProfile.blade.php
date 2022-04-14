@@ -9,11 +9,7 @@
             <link rel="stylesheet" href="{{ url('css/customised.css') }}">
             <title>Profile: {{session('name')}}</title>
 
-            <link
-                rel="stylesheet"
-                href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-                integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-                crossorigin="anonymous"/>
+            <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
             <style>
                 body {
                     font-family: 'Nunito', sans-serif;
@@ -21,13 +17,27 @@
             </style>
         </head>
         <body class="main_container">
-            <a href="userGameList/{{session('id')}}"><button>
-            Game bought
-            </button></a>
-            <div class="main_container">
-                <p>Name: {{session('name')}}</p>
-                <p>Email: {{session('email')}}</p>
+            
+            <div class="main_container" style="margin-left: 100px">
+                <h1>Personal Details</h1>
+                <p><Image
+                    className="d-block  w-100"
+                    src="https://exploringbits.com/wp-content/uploads/2022/01/Zhongli-PFP-2.jpg?ezimgfmt=rs:352x352/rscb3/ng:webp/ngcb3"
+                    fluid /></p>
+                <div style="font-weight: bold;">NAME:</div>
+                <div style="font-size: 25px">{{session('name')}}</div>
+                <div style="font-weight: bold;">EMAIL:</div>
+                <div style="font-size: 25px;">{{session('email')}}</div>
+                <div>
+                    <br>
+                <a href="userGameList/{{session('id')}}">
+                    <button class="btn-green-moon">
+                        Game bought
+                    </button></a>
+                    <p><br></p>
+                </div>
             </div>
+            
         </body>
         <script src="/js/app.js"></script>
         <x-footer/>
