@@ -38,9 +38,12 @@ export default class GameListing extends Component {
     render() {
         let games = this.state.games.map((game) => {
             return (
-                <div className="container">
+                <div className="main_container">
                     <Col>
-                        <Card style={{ width: "18rem" }}>
+                        <Card
+                            className="card_parent"
+                            style={{ border: "10px" }}
+                        >
                             <Card.Img
                                 variant="top"
                                 src={"/storage/game/" + game.mainImage}
@@ -54,7 +57,7 @@ export default class GameListing extends Component {
                                 <Card.Text>{game.gameDesc}</Card.Text>
                             </Card.Body>
                             <Card.Footer>
-                                <small className="text-muted">
+                                <small className="price_text">
                                     RM{game.gamePrice}
                                 </small>
                                 {/* <Button>Store Page</Button> */}
@@ -66,8 +69,28 @@ export default class GameListing extends Component {
         });
 
         return (
-            <div className="container">
-                <CardGroup>
+            <div className="main_container">
+                <Row>
+                    <Carousel>
+                        <Carousel.Item>
+                            <Image
+                                className="d-block  w-50 justify-content-md-center"
+                                src="https://images.greenmangaming.com/52afcbfc92cd440bbe33e93f76e1b239/254fcb09b85345c78d68f6dcb336786a.jpg"
+                                alt="First slide"
+                                fluid
+                            />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <Image
+                                className="d-block  w-50 justify-content-md-center"
+                                src="https://images.greenmangaming.com/70024f3cecd4441996358916a06675d0/9f9704a98aa04b9eb4d53770f4cde91d.jpg"
+                                alt="Second slide"
+                                fluid
+                            />
+                        </Carousel.Item>
+                    </Carousel>
+                </Row>
+                <CardGroup className="card_parent" style={{ border: "10px" }}>
                     <Row xs={3} md={3} className="g-4">
                         {games}
                     </Row>

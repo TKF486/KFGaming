@@ -22,7 +22,7 @@ body {
 </head>
 <body>
 <div class="topnav">
-  <a class="active" href="#home">KFGaming</a>
+  <a class="active" href="/home">KFGaming</a>
 
 @if (Route::has('login'))
     <!-- <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block"> -->
