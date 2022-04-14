@@ -241,3 +241,8 @@ a:active {
     color: white;
     text-align: center;
 }
+
+.row.gameDetails {
+    top: -228px;
+    position: relative;
+}
