@@ -22,9 +22,9 @@
         </head>
         <body class="main_container">
         <h1>Game Listing</h1>
-    <a href="createGames">
+    <!-- <a href="createGames">
     <button>Create Game</button>
-    </a>
+    </a> -->
     <table border="1">
     <tr>
     <td>Game Name</td>

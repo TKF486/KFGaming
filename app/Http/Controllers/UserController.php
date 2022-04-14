@@ -65,7 +65,9 @@ class UserController extends Controller
     function user_order_relation($id){
         // $user = Order::where('user_id', $id)->lists('game_id');
         $gameList = Order::select('game_id')->where('user_id', $id)->get();
+        $gameID = $gameList['game_id'];
+        $gameData = Game::select('gameName','mainImage')->where('id', $gameID)->get();
         // return $gameList;
-        return view('/userGameList', ['games'=>$gameList]);
+        return view('userGameList', ['games'=>$gameData]);
     }
 }

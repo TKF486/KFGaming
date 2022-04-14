@@ -21,7 +21,7 @@
             </style>
         </head>
         <body class="main_container">
-            <a href="userGameList"><button>
+            <a href="userGameList/{{session('id')}}"><button>
             Game bought
             </button></a>
             <div class="main_container">
