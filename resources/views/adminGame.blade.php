@@ -23,12 +23,13 @@
     </head>
     <body class="antialiased">
     <h1>Game Listing</h1>
-<table border="1">
+    <table border="1">
     <tr>
     <td>ID</td>
     <td>Game Name</td>
     <td>Price</td>
     <td>Description</td>
+    <td>Publisher</td>
     <td>Age Rating</td>
     <td>Genre</td>
     <td>Release Date</td>
@@ -37,6 +38,7 @@
     <td>Main Image</td>
     <td>Image 1</td>
     <td>Image 2</td>
+    <td>Operation 1</td>
     <td>Operation 2</td>
     </tr>
 
@@ -52,10 +54,16 @@
     <td>{{$game['gameReleaseDate']}}</td>
     <td>{{$game['gameLanguage']}}</td>
     <td>{{$game['gameRequirement']}}</td>
-    <td>{{$game['mainImage']}}</td>
-    <td>{{$game['image1']}}</td>
-    <td>{{$game['image2']}}</td>
-    <td><a href={{"delete/".$game['id']}}>Delete</a></td>
+    <td>
+    <img src={{ asset('storage/game/'.$game['mainImage']) }} alt="game_pic">
+    </td>
+    <td>
+    <img src={{$game['image1']}} alt="img1" class="table_img">
+    </td>
+    <td>
+    <img src={{$game['image2']}} alt="img2" class="table_img">
+    </td>
+    <td><a href={{"deleteGame/".$game['id']}}>Delete</a></td>
     <td><a href={{"update/".$game['id']}}>Update</a></td>
     </tr>
     @endforeach
@@ -69,10 +77,26 @@
       
     </body>
 
-    <!-- <style>
+    <style>
 .w-5{
-display: none
+  display: none
 }
-</style> -->
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 
 </html>

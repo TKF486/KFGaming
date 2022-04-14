@@ -8,19 +8,6 @@ use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
-    // public function list()
-    // {
-    //     $data = Game::all();
-    //     return view('gameDetails',['games'=>$data]);
-    // }
-
-    // public function testOneGame($id)
-    // {
-    //    $data = Game::where('id', $id)->get();
-    //    return view('gameDetails',['games'=>$data]);
-       
-    // }
-
     public function create(Request $req)
     {
         $game = new Game;

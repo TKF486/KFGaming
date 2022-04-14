@@ -14,4 +14,11 @@ class AdminController extends Controller
         $data = Game::paginate(5);;
         return view('adminGame',['games'=>$data]);
       }
+
+      public function deleteGame($id)
+      {
+          $data = Game::find($id);
+          $data-> delete();
+          return redirect("adminGame");
+      }
 }
