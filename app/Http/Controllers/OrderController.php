@@ -44,6 +44,6 @@ class OrderController extends Controller
         $order->creditCard = $req->creditCard;
         $order->address = $req->address;
         $order->save();
-        return redirect('gamelisting');
+        return redirect('home');
     }
 }
