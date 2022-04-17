@@ -144,7 +144,7 @@ export default class GameDetails extends Component {
                                     </Row>
                                     <Row>
                                         <Col sm={9}>
-                                            <h5>RM179.99</h5>
+                                            <h5>RM {games.gamePrice}</h5>
                                         </Col>
                                         <Col sm={3}>
                                             <button
