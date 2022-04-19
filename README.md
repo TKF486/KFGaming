@@ -11,7 +11,7 @@ After cloning the git, these in command line:
 
 Use the following to launch the project:
 1. Start the WampServer.
-2. Create a database named ```KFGaming``` at http://localhost/phpmyadmin/index.php.
+2. Create a database named `KFGaming` at http://localhost/phpmyadmin/index.php.
 3. Run ```php artisan migrate``` to migrate the tables.
 4. Run ```npm run dev``` to compile.
 5. Run ```php artisan serve``` to start the server.
